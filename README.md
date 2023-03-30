@@ -1,7 +1,7 @@
 ## :sunny: Weather-App-Using-Flask :cloud_with_lightning_and_rain:
 ## Made as a Final Project For CS50x
 
-### in this app you can add any city to check the weather and remove it
+### in this app you can add any city to check the weather and remove it (uses openweatherapi)
 
 ### to use this app type the following in cmd:
 
