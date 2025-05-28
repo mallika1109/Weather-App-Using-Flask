@@ -1,0 +1,11 @@
+name: Hardcoded Secret Workflow
+
+on: [push]
+
+jobs:
+  demo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print hardcoded secret
+        run: echo "The API key is 0f93d6363a3c0fd460215d032629d5f1"
+
