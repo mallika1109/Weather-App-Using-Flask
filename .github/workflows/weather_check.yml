@@ -1,0 +1,35 @@
+name: Flask Weather App CI
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirement.txt
+
+    - name: Run weather script
+      env:
+        OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+      run: |
+        echo "API Key is set!"
+        # Add an optional test or script here
+        python app.py &
+        sleep 5
+        curl -s http://127.0.0.1:5000/?city=Toronto
+
